@@ -1,0 +1,32 @@
+# Configuración de Aider para Proyecto Mantenimiento Predictivo
+
+# 1. Archivos que Aider siempre debe tener en cuenta (Contexto permanente)
+read:
+  - docs/context.md
+  - README.md
+
+# 2. Modelo a utilizar (Gemini 1.5 Pro es excelente para razonamiento técnico)
+model: google/gemini-1.5-pro
+
+# 3. Preferencias de edición
+# 'diff' es el más estable, 'architect' es mejor para cambios grandes de estructura
+edit-format: diff
+
+# 4. Ajustes de Git
+# Aider hará un commit automático cada vez que sugiera un cambio exitoso
+commit: true
+attribute-author: true
+attribute-committer: true
+
+# 5. Instrucciones de estilo (Opcional, pero recomendado)
+# Esto refuerza lo que dice tu context.md cada vez que Aider inicia
+message: |
+  Recuerda:
+  - El entorno de desarrollo es Windows 10.
+  - Seguir el flujo: DeepFilterNet -> Librosa (MFCCs) -> Classification.
+  - El entorno de producción es Ubuntu.
+  - Usa FastAPI y Celery para tareas asíncronas.
+
+# 6. Interfaz y sugerencias
+dark-mode: true
+suggest-shell-commands: true
